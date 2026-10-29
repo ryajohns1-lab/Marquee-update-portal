@@ -1,7 +1,8 @@
-// Change these 3 values before deployment. Public GitHub releases are used.
+// Marquee's online updates. The Beelink builds each version and publishes it as a GitHub Release
+// of this public repo (the app only; the source stays private): marquee.apk + version.json.
 window.UPDATE_CONFIG = {
-  appName: 'My Fire TV App',
-  githubOwner: 'YOUR_GITHUB_USERNAME',
-  githubRepo: 'YOUR_REPOSITORY',
-  apkAssetName: 'app-release.apk' // Optional: exact APK asset filename; fallback picks first .apk
+  appName: 'Marquee',
+  githubOwner: 'ryajohns1-lab',
+  githubRepo: 'Marquee-update-portal',
+  apkAssetName: 'marquee.apk' // the same name on every release
 };
