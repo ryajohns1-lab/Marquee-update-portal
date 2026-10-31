@@ -1,1 +1,161 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#09111e"><title>Ovrelixa Updates</title><link rel="stylesheet" href="styles.css"></head><body><main class="wrap"><header><div class="brand"><div class="mark">▶</div><div><span class="eyebrow">RELEASE CONTROL</span><h1 id="app-name">Fire TV App</h1></div></div><span class="pill"><span class="dot"></span> PUBLIC RELEASE CHANNEL</span></header><section class="hero"><div><span class="eyebrow">YOUR APP · ANY DEVICE · ANYWHERE</span><h2>Updates, without the cables.</h2><p>Check the latest release, read what changed, and download the signed APK directly from your public release channel.</p><div class="buttons"><a id="download" class="btn primary disabled" aria-disabled="true">No release available</a><button id="refresh" class="btn secondary">↻ Check for updates</button></div><p class="fine" id="error">Configure <code>config.js</code> with your public GitHub repository to begin.</p></div><div class="status"><span class="eyebrow">CURRENT RELEASE</span><strong id="version">—</strong><span id="release-date">Not loaded</span><div class="line"></div><span class="tiny">PACKAGE</span><span id="package">Android / Fire OS · APK</span><span class="tiny">BUILD STATUS</span><span id="build-status">Not configured</span></div></section><section class="panels"><article class="panel"><div class="icon">✦</div><h3>What's new</h3><div id="notes" class="notes">Release notes from the latest published GitHub Release will appear here.</div></article><article class="panel"><div class="icon">⚡</div><h3>How updates work</h3><ol><li>Code is pushed to GitHub.</li><li>Your Beelink compiles and signs a release APK.</li><li>The APK is uploaded to GitHub Releases.</li><li>Your Fire TV app checks the release manifest and offers installation.</li></ol><p class="fine">Android / Fire OS may require on-device installation approval.</p></article></section><footer>Fire TV Update Portal <span id="repo-link"></span></footer></main><script src="config.js"></script><script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d14">
+  <meta name="description" content="Ovrelixa. A beautifully cinematic way to discover and enjoy your movies and series. Private access for Android TV and Fire TV.">
+  <meta property="og:title" content="Ovrelixa — Your screen. Elevated.">
+  <meta property="og:description" content="Movies. Series. Stunning playback. A beautifully cinematic experience.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/assets/ovrelixa-mark.png" type="image/png">
+  <title>Ovrelixa — Your screen. Elevated.</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/config.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Ovrelixa home">
+        <img class="brand-icon" src="/assets/ovrelixa-mark.png" alt="" width="46" height="46">
+        <img class="brand-wordmark" src="/assets/ovrelixa-wordmark.png" alt="Ovrelixa">
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#experience">Experience</a>
+        <a href="#features">Highlights</a>
+        <a href="#access" class="nav-cta">Get access <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="overline"><span class="sparkle" aria-hidden="true">✦</span> THE NEXT WAY TO WATCH</div>
+          <h1 id="hero-title">Your screen.<br><em>Elevated.</em></h1>
+          <p class="hero-lead">All the movies and series you love to explore. A cinematic experience built to make every moment feel bigger.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#access">Get Ovrelixa <span aria-hidden="true">↗</span></a>
+            <a class="button button-outline" href="#experience"><span class="play-mini" aria-hidden="true">▶</span> Explore the experience</a>
+          </div>
+          <div class="hero-meta"><span class="pulse-dot" aria-hidden="true"></span> PRIVATE ACCESS <span class="meta-divider"></span> FIRE TV &amp; ANDROID TV</div>
+        </div>
+        <div class="hero-art">
+          <div class="halo" aria-hidden="true"></div>
+          <div class="device">
+            <div class="device-screen">
+              <div class="screen-nav"><span class="screen-logo">OVRELIXA</span><span class="screen-menu active">Discover</span><span class="screen-menu">Movies</span><span class="screen-menu">Series</span><span class="screen-search" aria-hidden="true">⌕</span></div>
+              <div class="screen-feature">
+                <div class="screen-feature-art" aria-hidden="true"><span class="orbit orbit-1"></span><span class="orbit orbit-2"></span><span class="planet"></span></div>
+                <div class="screen-feature-copy">
+                  <div class="screen-label">FEATURED TONIGHT</div>
+                  <strong>BEYOND<br>THE HORIZON</strong>
+                  <div class="screen-facts">2026 <span>•</span> SCI-FI <span>•</span> 4K UHD</div>
+                  <span class="screen-play"><span>▶</span> Play</span>
+                </div>
+              </div>
+              <div class="screen-section-title">For your next movie night <span>See all →</span></div>
+              <div class="screen-posters">
+                <div class="poster poster-one"><span>AFTER<br>THE LIGHT</span></div>
+                <div class="poster poster-two"><span>NORTH<br>BOUND</span></div>
+                <div class="poster poster-three"><span>NOCTURNE</span></div>
+                <div class="poster poster-four"><span>THE<br>DEEP</span></div>
+                <div class="poster poster-five"><span>ECHOES</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="device-stand" aria-hidden="true"></div>
+          <div class="hero-float float-quality"><span class="float-icon">✦</span><div><strong>Stunning detail</strong><small>Made for your big screen</small></div></div>
+          <div class="hero-float float-play"><span class="float-icon">▶</span><div><strong>Your next favorite</strong><small>Just a click away</small></div></div>
+        </div>
+      </section>
+
+      <section class="capabilities" aria-label="Viewing highlights">
+        <span>MOVIES</span><i></i><span>TV SERIES</span><i></i><span>4K ULTRA HD</span><i></i><span>HDR</span><i></i><span>IMMERSIVE AUDIO</span>
+      </section>
+
+      <section class="experience section-space" id="experience" aria-labelledby="experience-title">
+        <div class="section-heading">
+          <div><span class="kicker">THE EXPERIENCE</span><h2 id="experience-title">Made for the<br><em>moments that matter.</em></h2></div>
+          <p>From the first browse to the final credits, every detail is designed to feel effortless.</p>
+        </div>
+        <div class="preview-layout">
+          <div class="preview-frame">
+            <div class="preview-topbar"><span><b class="preview-status-dot"></b> OVRELIXA EXPERIENCE</span><span id="preview-counter">01 / 03</span></div>
+            <div class="preview-canvas">
+              <section class="preview-slide active" data-slide="0" aria-label="Discover interface concept">
+                <div class="mock-menu"><b>O<span>▶</span></b><span>Home</span><span>Movies</span><span>Series</span><span>Library</span></div>
+                <div class="mock-main">
+                  <div class="mock-hero-sky"><div class="mock-moon"></div><div class="mock-mountain one"></div><div class="mock-mountain two"></div></div>
+                  <div class="mock-hero-title"><small>FOR YOU • FEATURED</small><strong>THE OTHER<br>SIDE OF NIGHT</strong><p>Lose yourself in something extraordinary.</p><span class="mock-action">▶ &nbsp; Play now</span></div>
+                  <div class="mock-row-title">Because great stories never end <span>View all ›</span></div>
+                  <div class="mock-thumbnails"><div class="mini-poster m1">THE<br>PASSAGE</div><div class="mini-poster m2">GOLDEN<br>HOUR</div><div class="mini-poster m3">HOLLOW<br>SKY</div><div class="mini-poster m4">OFF<br>GRID</div></div>
+                </div>
+              </section>
+              <section class="preview-slide" data-slide="1" aria-label="Movie detail interface concept" hidden>
+                <div class="detail-scene"><div class="detail-sun"></div><div class="detail-hills"></div></div>
+                <div class="detail-copy"><span class="detail-label">A NEW WORLD AWAITS</span><h3>THE LAST<br>FRONTIER</h3><p>One extraordinary journey. A thousand unforgettable moments.</p><div class="detail-tags"><span>4K</span><span>HDR</span><span>2h 08m</span><span>Adventure</span></div><div class="detail-buttons"><b>▶ &nbsp; Watch now</b><span>＋ &nbsp; My list</span></div></div>
+              </section>
+              <section class="preview-slide" data-slide="2" aria-label="Playback interface concept" hidden>
+                <div class="player-scene"><div class="player-glow"></div><div class="player-ridge"></div></div>
+                <div class="player-bar"><div class="player-heading"><span>NOW PLAYING</span><b>After the Light</b></div><div class="player-progress"><b></b></div><div class="player-times"><span>00:48:32</span><span>01:52:10</span></div><div class="player-controls"><span>↶ 10</span><strong>❚❚</strong><span>10 ↷</span></div></div>
+                <div class="quality-tag">4K UHD · HDR</div>
+              </section>
+            </div>
+          </div>
+          <div class="preview-details">
+            <div class="preview-tabs" role="tablist" aria-label="Explore Ovrelixa interface">
+              <button class="preview-tab active" type="button" role="tab" aria-selected="true" aria-controls="preview-caption" data-index="0"><span>01</span> Discover</button>
+              <button class="preview-tab" type="button" role="tab" aria-selected="false" aria-controls="preview-caption" data-index="1"><span>02</span> Details</button>
+              <button class="preview-tab" type="button" role="tab" aria-selected="false" aria-controls="preview-caption" data-index="2"><span>03</span> Playback</button>
+            </div>
+            <div id="preview-caption" class="preview-caption" aria-live="polite">
+              <span class="kicker">BROWSE BEAUTIFULLY</span>
+              <h3 id="preview-title">Find your next obsession.</h3>
+              <p id="preview-description">Beautiful artwork, effortless discovery, and a home screen that makes you want to keep exploring.</p>
+            </div>
+            <p class="preview-disclaimer">Illustrative interface previews. Actual app screens may vary.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature-section section-space" id="features" aria-labelledby="features-title">
+        <div class="section-heading compact"><div><span class="kicker">MORE THAN PLAY</span><h2 id="features-title">Every detail.<br><em>Worth watching.</em></h2></div></div>
+        <div class="feature-grid">
+          <article class="feature-card feature-wide"><div class="feature-glyph">✦</div><div><h3>Stunning picture. Serious sound.</h3><p>Enjoy crisp 4K visuals, HDR and immersive audio when your content and setup support them.</p></div><div class="format-pills"><span>4K ULTRA HD</span><span>HDR</span><span>IMMERSIVE AUDIO</span></div></article>
+          <article class="feature-card"><div class="feature-glyph">⌕</div><h3>Find what moves you.</h3><p>Explore movies and series in a clean, cinematic library.</p></article>
+          <article class="feature-card"><div class="feature-glyph">▶</div><h3>Press play. Get lost.</h3><p>A player designed to keep the story front and center.</p></article>
+          <article class="feature-card"><div class="feature-glyph">▣</div><h3>Your screen, your way.</h3><p>Designed for big-screen navigation and personal viewing preferences.</p></article>
+        </div>
+      </section>
+
+      <section class="access-section section-space" id="access" aria-labelledby="access-title">
+        <div class="access-aurora" aria-hidden="true"></div>
+        <div class="access-content">
+          <span class="kicker">PRIVATE ACCESS</span>
+          <h2 id="access-title">The experience<br><em>starts here.</em></h2>
+          <p>Already have an access code? Your latest Ovrelixa download is just one step away.</p>
+          <form id="access-form" class="access-form" autocomplete="off">
+            <label for="access-code">YOUR ACCESS CODE</label>
+            <div class="access-fields"><input id="access-code" name="access-code" type="text" inputmode="text" maxlength="80" placeholder="Enter your access code" autocapitalize="characters" autocorrect="off" spellcheck="false" aria-describedby="access-feedback" required><button class="button button-primary" type="submit" id="unlock-button">Unlock download <span aria-hidden="true">→</span></button></div>
+            <p class="access-feedback" id="access-feedback" role="status" aria-live="polite">Secure download for authorized users.</p>
+          </form>
+          <div class="download-result" id="download-result" hidden>
+            <div class="result-success"><span aria-hidden="true">✓</span><div><strong>Access granted</strong><small id="release-label">Ovrelixa for Fire TV / Android TV</small></div></div>
+            <a id="private-download" class="button button-download" href="#" rel="noreferrer">Download Ovrelixa <span aria-hidden="true">↓</span></a>
+            <p id="release-notes" class="download-notes"></p>
+            <p class="download-expiry">Your secure download link expires in 30 minutes. Enter your code again to renew.</p>
+          </div>
+          <details class="install-help"><summary>Installing on Fire TV or Android TV? <span aria-hidden="true">↗</span></summary><p>Open your private download link on the device or transfer the downloaded APK to your TV. Approve app installation if prompted by Fire OS or Android TV. Existing installations should use the in-app update prompt where possible.</p></details>
+        </div>
+        <img class="access-mark" src="/assets/ovrelixa-mark.png" alt="" aria-hidden="true">
+      </section>
+    </main>
+
+    <footer class="footer"><a class="footer-brand" href="#top">OVRELIXA<span>®</span></a><p>Less searching. More watching.</p><div class="footer-links"><a href="#experience">Experience</a><a href="#features">Highlights</a><a href="#access">Private access</a></div><small>© 2026 Ovrelixa. Content and playback capabilities depend on connected services, media and supported devices.</small></footer>
+  </div>
+</body>
+</html>
