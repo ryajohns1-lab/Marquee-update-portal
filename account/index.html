@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#080d14">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="referrer" content="no-referrer">
+  <link rel="icon" href="/assets/ovrelixa-mark.png">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/account/account.css">
+  <script src="/account/account.js" defer></script>
+  <title>Secure account • Ovrelixa</title>
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <header class="account-header">
+    <a href="/" aria-label="Ovrelixa home" class="brand">
+      <img src="/assets/ovrelixa-mark.png" alt="" width="46" height="46">
+      <img src="/assets/ovrelixa-wordmark.png" alt="Ovrelixa" width="160">
+    </a>
+  </header>
+  <main class="account-wrap">
+    <section class="account-panel">
+      <p class="eyebrow">OVRELIXA ACCOUNTS</p>
+      <h1 id="page-title">Your account.<br><em>Protected.</em></h1>
+      <p id="status" class="status" role="status" aria-live="polite">Loading secure account action…</p>
+      <form id="reset-form" hidden>
+        <label for="new-password">New password</label>
+        <input id="new-password" type="password" required minlength="12" maxlength="128" autocomplete="new-password" placeholder="At least 12 characters">
+        <label for="confirm-password">Confirm new password</label>
+        <input id="confirm-password" type="password" required minlength="12" maxlength="128" autocomplete="new-password" placeholder="Repeat password">
+        <button id="reset-button" type="submit">Change password</button>
+      </form>
+      <form id="forgot-form" hidden>
+        <label for="email">Account email address</label>
+        <input id="email" type="email" maxlength="254" required autocomplete="email" placeholder="you@example.com">
+        <button id="forgot-button" type="submit">Send reset link</button>
+      </form>
+      <p class="support">After confirming your email or changing your password, open Ovrelixa and sign in. Android TV device activation remains separate.</p>
+      <a href="/" class="back">Back to Ovrelixa</a>
+    </section>
+  </main>
+</body>
+</html>
