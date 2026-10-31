@@ -1,1 +1,21 @@
-(async()=>{const cfg=window.UPDATE_CONFIG||{},$=id=>document.getElementById(id),owner=cfg.githubOwner,repo=cfg.githubRepo; $('app-name').textContent=cfg.appName||'Fire TV App';const configured=owner&&repo&&!owner.startsWith('YOUR_')&&!repo.startsWith('YOUR_');if(configured){const a=document.createElement('a');a.href=`https://github.com/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}`;a.textContent='GitHub repository';a.target='_blank';a.rel='noopener noreferrer';$('repo-link').append(a)}async function refresh(){if(!configured)return;$('build-status').textContent='Checking GitHub…';$('error').textContent='Checking published releases…';$('download').classList.add('disabled');$('download').removeAttribute('href');try{const url=`https://api.github.com/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/releases/latest`;const r=await fetch(url,{headers:{Accept:'application/vnd.github+json'},cache:'no-store'});if(!r.ok)throw new Error(`GitHub API returned ${r.status}. Verify public repository and published release.`);const release=await r.json();const asset=release.assets?.find(a=>a.name===cfg.apkAssetName)||release.assets?.find(a=>a.name.toLowerCase().endsWith('.apk'));if(!asset)throw new Error('Release found, but no APK asset is attached.');$('version').textContent=release.tag_name||release.name;$('release-date').textContent=release.published_at?`Published ${new Date(release.published_at).toLocaleDateString()}`:'Published release';$('build-status').textContent='Published · Ready';$('notes').textContent=release.body||'No release notes provided.';$('download').href=asset.browser_download_url;$('download').classList.remove('disabled');$('download').removeAttribute('aria-disabled');$('download').textContent=`↓ Download APK · ${(asset.size/1048576).toFixed(1)} MB`;$('error').textContent='Latest public release loaded successfully.'}catch(e){$('build-status').textContent='Unavailable';$('error').textContent=e.message; $('download').textContent='No release available'}}$('refresh').addEventListener('click',refresh);await refresh()})();
+(()=>{const cfg=window.UPDATE_CONFIG||{},$=id=>document.getElementById(id),base=cfg.accessApi||'';
+$('app-name').textContent=cfg.appName||'Ovrelixa';
+const input=$('access-code'),button=$('download'),error=$('error');
+button.addEventListener('click',async()=>{
+  const code=input.value.trim();
+  if(!code){error.textContent='Enter your access code first.';input.focus();return;}
+  button.disabled=true;button.textContent='Verifying access…';error.textContent='Checking access and preparing a secure download…';
+  try{
+    const r=await fetch(base+'/v1/site/ticket',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code}),cache:'no-store'});
+    if(!r.ok){if(r.status===429)throw new Error('Too many attempts. Try again in 15 minutes.');if(r.status===403||r.status===400)throw new Error('That access code was not accepted.');throw new Error('Private download service is not ready. Try again later.');}
+    const v=await r.json();
+    if(typeof v.url!=='string'||!v.url.startsWith(base+'/v1/site/download/'))throw new Error('Invalid download link returned.');
+    $('version').textContent=v.versionName||'Latest';$('build-status').textContent='Verified · Ready';
+    $('release-date').textContent='Private channel';$('notes').textContent=v.notes||'Security enhancements and reliability improvements.';
+    error.textContent='Verified. Your download is starting…';
+    window.location.assign(v.url);
+  }catch(e){error.textContent=e.message||'Could not start download';$('build-status').textContent='Verification required';}
+  finally{button.disabled=false;button.textContent='↓ Download APK';}
+});
+input.addEventListener('keydown',e=>{if(e.key==='Enter')button.click();});
+})();
