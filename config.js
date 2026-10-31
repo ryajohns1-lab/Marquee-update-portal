@@ -1,8 +1,4 @@
-// Marquee's online updates. The Beelink builds each version and publishes it as a GitHub Release
-// of this public repo (the app only; the source stays private): marquee.apk + version.json.
-window.UPDATE_CONFIG = {
-  appName: 'Ovrelixa',
-  githubOwner: 'ryajohns1-lab',
-  githubRepo: 'Marquee-update-portal',
-  apkAssetName: 'marquee.apk' // the same name on every release
-};
+// Public, non-secret website settings. The APK never lives in this repository.
+window.OVRELIXA_CONFIG = Object.freeze({
+  accessApiOrigin: "https://ovrelixa-access-api.ryajohns1.workers.dev"
+});
