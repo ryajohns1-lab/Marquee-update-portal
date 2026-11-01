@@ -45,6 +45,8 @@
   if (active && /^https:\/\/github\.com\/ryajohns1-lab\/Marquee-TV-update-portal\/releases\//.test(config.publicApkUrl || '')) {
     transition.hidden = false;
     publicLink.href = config.publicApkUrl;
-    deadline.textContent = Date.now() < until\n      ? 'The minimum seven-day public transition runs through ' + new Date(until).toLocaleString() + '. Public delivery stays available until secure updates have been verified.'\n      : 'The seven-day minimum has elapsed. Public delivery remains available until secure updates are verified.';
+    deadline.textContent = Date.now() < until
+      ? 'The minimum seven-day public transition runs through ' + new Date(until).toLocaleString() + '. Public delivery stays available until secure updates have been verified.'
+      : 'The seven-day minimum has elapsed. Public delivery remains available until secure updates are verified.';
   }
 })();
