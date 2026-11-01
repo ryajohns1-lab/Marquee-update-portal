@@ -28,7 +28,7 @@
       });
       const result = await res.json().catch(() => ({}));
       if (!res.ok || !safeDownload(result.url)) throw new Error(
-        res.status === 429 ? 'Too many attempts. Try again later.' : 'This TV access code was not accepted or downloads are unavailable.'
+        res.status === 429 ? 'Too many attempts. Try again later.' : res.status === 503 ? 'Private downloads are still being prepared. Use the public transition download below.' : 'This TV access code was not accepted.'
       );
       codeField.value = '';
       status.textContent = 'Access approved. Starting secure download…';
@@ -41,10 +41,10 @@
 
   // Transition is explicitly switched on only at the secure release.
   const until = Date.parse(config.publicUntil || '');
-  const active = config.publicTransition === true && Number.isFinite(until) && Date.now() < until;
+  const active = config.publicTransition === true && Number.isFinite(until);
   if (active && /^https:\/\/github\.com\/ryajohns1-lab\/Marquee-TV-update-portal\/releases\//.test(config.publicApkUrl || '')) {
     transition.hidden = false;
     publicLink.href = config.publicApkUrl;
-    deadline.textContent = 'Public transition closes ' + new Date(until).toLocaleString() + '.';
+    deadline.textContent = Date.now() < until\n      ? 'The minimum seven-day public transition runs through ' + new Date(until).toLocaleString() + '. Public delivery stays available until secure updates have been verified.'\n      : 'The seven-day minimum has elapsed. Public delivery remains available until secure updates are verified.';
   }
 })();

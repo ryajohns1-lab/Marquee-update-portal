@@ -3,7 +3,7 @@
 // Do not enable public transition until a protected TV build is released.
 window.OVRELIXA_TV_CONFIG = Object.freeze({
   accessApiOrigin: 'https://ovrelixa-tv-access-api.ryajohns1.workers.dev',
-  publicTransition: false,
-  publicUntil: '',
+  publicTransition: true,
+  publicUntil: '2026-11-08T00:48:44Z',
   publicApkUrl: 'https://github.com/ryajohns1-lab/Marquee-TV-update-portal/releases/latest/download/ovrelixa-tv.apk'
 });
