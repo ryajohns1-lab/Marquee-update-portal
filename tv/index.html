@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#08090D">
+  <meta name="description" content="Ovrelixa TV — live television, movies and series from playlists you provide. Private access for Android TV and Fire TV.">
+  <title>Ovrelixa TV — Live. Movies. Series.</title>
+  <link rel="icon" href="/assets/ovrelixa-mark.png">
+  <link rel="stylesheet" href="/tv/tv.css">
+  <script src="/tv/config.js" defer></script>
+  <script src="/tv/tv.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="header">
+    <a class="wordmark" href="/" aria-label="Ovrelixa home">
+      <img src="/assets/ovrelixa-mark.png" width="44" height="44" alt="">
+      <span>OVRELIXA <strong>TV</strong></span>
+    </a>
+    <nav aria-label="Product navigation"><a href="/">Ovrelixa</a><a href="/tv/" aria-current="page">Ovrelixa TV</a><a href="#access">Get access</a></nav>
+  </header>
+  <main id="main">
+    <section class="hero">
+      <div class="glow"></div>
+      <div class="hero-copy">
+        <p class="eyebrow">OVRELIXA TV · PRIVATE EXPERIENCE</p>
+        <h1>Live TV.<br><em>Everything else.</em></h1>
+        <p class="lead">Your playlists, your screen. A refined guide for live channels, plus on-demand movies and TV series when your provider includes them.</p>
+        <div class="actions"><a href="#access" class="primary">Get Ovrelixa TV</a><a class="secondary" href="#features">Explore the experience</a></div>
+        <p class="hint">Android TV · Fire TV · iPhone via TestFlight</p>
+      </div>
+      <div class="display" aria-label="Illustration of Ovrelixa TV interface">
+        <div class="display-header"><span>◉ OVRELIXA TV</span><span>LIVE&nbsp; | &nbsp;MOVIES&nbsp; | &nbsp;SERIES</span></div>
+        <div class="display-main"><div class="screen-title">TONIGHT ON<br>YOUR SCREEN</div><span class="screen-play">▶ &nbsp;Watch now</span></div>
+        <div class="display-rows"><span>GUIDE</span><i></i><i></i><i></i></div>
+      </div>
+    </section>
+    <section class="features" id="features">
+      <article><span class="feature-icon">▤</span><h2>Live guide</h2><p>Fast channel switching, favorites, groups, catch-up and multiview.</p></article>
+      <article><span class="feature-icon">▶</span><h2>Movies &amp; series</h2><p>Browse your provider's on-demand library by category, series, season and episode.</p></article>
+      <article><span class="feature-icon">✦</span><h2>Two visual styles</h2><p>Choose the familiar TV layout or the cinematic Ovrelixa appearance.</p></article>
+    </section>
+    <section class="access" id="access">
+      <p class="eyebrow">PRIVATE DOWNLOADS</p>
+      <h2>Get Ovrelixa TV</h2>
+      <p>Use your authorized Ovrelixa TV access code to obtain the Fire TV / Android TV installer. Your code is sent securely to the access service; it is not stored in your browser.</p>
+      <form id="tv-access-form" autocomplete="off">
+        <label for="tv-code">Ovrelixa TV access code</label>
+        <div class="form-row"><input id="tv-code" type="password" minlength="16" maxlength="96" inputmode="text" spellcheck="false" autocomplete="off" placeholder="Enter your access code" required><button type="submit">Get download</button></div>
+        <output id="tv-status" role="status" aria-live="polite"></output>
+      </form>
+      <div id="public-transition" class="transition" hidden>
+        <p><strong>Transition download:</strong> This public download is temporarily available for existing installations to move onto secure updates.</p>
+        <a id="public-download" href="#" rel="noopener noreferrer">Download transition APK</a>
+        <p id="transition-deadline"></p>
+      </div>
+      <div class="instructions"><h3>Install on Fire TV</h3><p>Open Downloader on Fire TV, use the Ovrelixa TV address or its registered Downloader short code, install the APK, and enter your device authorization code inside the app. Account sign-in is optional.</p>
+        <p class="note">Ovrelixa TV does not include IPTV playlists, channel subscriptions or copyrighted streams. Add your own authorized M3U or Xtream Codes provider.</p>
+      </div>
+    </section>
+  </main>
+  <footer><span>© Ovrelixa</span><span>Independent apps. Separate downloads and device authorization.</span><a href="/">Ovrelixa movies &amp; series</a></footer>
+</body>
+</html>
