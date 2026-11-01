@@ -174,3 +174,19 @@ h1 em,h2 em{font-style:normal;background:linear-gradient(95deg,#effaff 0%,#86d8f
 .product-link small{font-size:11px;color:#94a6b9;margin-top:2px}
 .product-link:focus-visible{outline:2px solid #70e3fc;outline-offset:2px}
 @media(max-width:600px){.product-switch{gap:7px;margin:12px 0}.product-link{padding:11px 8px;gap:7px;border-radius:10px}.product-icon{flex-basis:27px;width:27px;height:27px;font-size:12px}.product-link strong{font-size:12px}.product-link small{font-size:9px;line-height:1.25}}
+
+/* 2026 refinement — match Ovrelixa TV's compact app-selector across both sites. */
+.product-switch{display:flex;max-width:550px;gap:5px;margin:19px auto 0;padding:5px;border:1px solid #344961;border-radius:16px;background:#0b1a2a}
+.product-link{flex:1;min-width:0;gap:10px;padding:12px 14px;border:1px solid transparent;border-radius:11px;background:transparent;color:#b3c7d9}
+.product-link[aria-current=page]{border:1px solid #40d2fc;background:linear-gradient(125deg,#123d60,#15304a);box-shadow:0 0 20px #0bbdff55;color:#fff}
+.product-link.product-tv[aria-current=page]{border-color:#f0bd55;background:linear-gradient(120deg,#3c2e1b,#102e46)}
+.product-icon{flex:0 0 27px;width:27px;height:27px;font-size:16px;border-radius:8px;background:#123b52}
+.product-link strong{font-size:14px}
+.product-link small{font-size:11px}
+@media(max-width:600px){
+ .product-switch{max-width:100%;gap:3px;margin:12px auto 0;padding:3px;border-radius:12px}
+ .product-link{padding:9px 6px;gap:5px;border-radius:9px}
+ .product-icon{flex:0 0 18px;width:18px;height:22px;font-size:12px}
+ .product-link strong{font-size:12px}
+ .product-link small{font-size:9px;line-height:1.2}
+}
