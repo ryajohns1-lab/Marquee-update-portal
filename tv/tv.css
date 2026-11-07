@@ -163,6 +163,14 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 .form-row button{white-space:nowrap}
 .form-row button[disabled]{opacity:.6;cursor:wait}
 #tv-status{display:block;min-height:24px;color:#91c3dc;font-size:12px;margin:11px 0 0}
+.private-result{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin:22px 0 0;padding:20px 22px;border:1px solid #488797;border-radius:12px;background:#071f2fc9}
+.private-result[hidden]{display:none}
+.private-result-heading{display:flex;align-items:center;gap:12px}
+.private-result-check{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:#21c7dd;color:#09202a;font-weight:900}
+.private-result-heading strong{font-size:16px;color:#ecfcff}
+.private-result-heading p{font-size:12px;color:#a6d5e6;margin:4px 0 0}
+.private-result .button{width:auto;max-width:100%}
+.private-result-notes,.private-result-expiry{font-size:12px;color:#b6cedd;margin:0;line-height:1.5}
 .transition{display:grid;grid-template-columns:1fr auto;gap:10px 22px;align-items:center;margin:25px 0 0;padding:19px 22px;border:1px solid #476480;border-radius:12px;background:#071b2bba}
 .transition[hidden]{display:none}
 .transition strong{font-size:15px}
