@@ -10,9 +10,9 @@
   <title>Ovrelixa TV | Live TV, Guide, Movies &amp; Series</title>
   <link rel="icon" href="/assets/ovrelixa-mark.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="/tv/tv.css?v=20261105a">
+  <link rel="stylesheet" href="/tv/tv.css?v=20261106b">
   <script src="/tv/config.js" defer></script>
-  <script src="/tv/tv.js" defer></script>
+  <script src="/tv/tv.js?v=20261106b" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -204,6 +204,15 @@
             </div>
             <output id="tv-status" role="status" aria-live="polite">Enter a valid access code to request the current protected TV download.</output>
           </form>
+          <div id="tv-download-result" class="private-result" hidden>
+            <div class="private-result-heading">
+              <span class="private-result-check" aria-hidden="true">✓</span>
+              <div><strong>Access granted</strong><p id="tv-release-label">Ovrelixa TV for Fire TV / Android TV</p></div>
+            </div>
+            <a id="tv-private-download" class="button button-primary" href="#" rel="noreferrer">Download Ovrelixa TV <span aria-hidden="true">↓</span></a>
+            <p id="tv-download-notes" class="private-result-notes"></p>
+            <p class="private-result-expiry">Your secure download link is valid for 30 minutes. Enter your code again if it expires.</p>
+          </div>
           <div id="public-transition" class="transition" hidden>
             <div><strong>Public transition release</strong><p>Already installed? Use this signed release while devices move onto the protected updater.</p></div>
             <a id="public-download" class="button button-secondary" href="#" rel="noopener noreferrer">Download current APK ↗</a>
